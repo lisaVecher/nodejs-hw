@@ -13,6 +13,7 @@
   "author": "Yelyzaveta Vecherovska <vecheli0306@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "celebrate": "^15.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
