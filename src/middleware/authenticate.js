@@ -2,15 +2,14 @@ import createHttpError from 'http-errors';
 import { Session } from '../models/session.js';
 import { User } from '../models/user.js';
 
-export const authenticate = async (req, resizeBy, next) => {
-  const { sessionId, accessToken } = req.cookies;
+export const authenticate = async (req, res, next) => {
+  const { accessToken } = req.cookies;
 
-  if (!sessionId || !accessToken) {
+  if (!accessToken) {
     throw createHttpError(401, 'Missing session credentials');
   }
 
   const session = await Session.findOne({
-    _id: sessionId,
     accessToken,
   });
 
